@@ -11,11 +11,12 @@ FtoO	=	$(FILES:.cpp=.o)
 all: $(NAME)
 
 $(NAME):	$(FtoO)
-	$(CC) $(CFLAGS) $(FtoO) -o $(NAME)
+	@echo "compiling"
+	@$(CC) $(CFLAGS) $(FtoO) -o $(NAME)
+	@echo "compiled"
 
 %.o: %.cpp
-	$(CC) $(CFLAGS) -c $< -o $@
-
+	@$(CC) $(CFLAGS) -c $< -o $@
 clean:
 	$(RM) $(FtoO)
 
