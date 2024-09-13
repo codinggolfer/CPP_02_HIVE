@@ -5,44 +5,57 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: eagbomei <eagbomei@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/13 11:12:39 by eagbomei          #+#    #+#             */
-/*   Updated: 2024/09/13 14:39:59 by eagbomei         ###   ########.fr       */
+/*   Created: 2024/09/13 13:43:07 by eagbomei          #+#    #+#             */
+/*   Updated: 2024/09/13 15:54:05 by eagbomei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-Fixed::Fixed()
-	: fixedPointNum(0) {
+Fixed::Fixed() : fixedPointNum(0) {
 	std::cout << "Default constructor called" << std::endl;
 }
 
+Fixed::Fixed(const int num)
+	: fixedPointNum(num << fracBits) {
+	std::cout << "Int constructor called" << std::endl;
+}
+
+Fixed::Fixed(const float num)
+	: fixedPointNum(static_cast<int>(roundf(num * (1 << fracBits)))) {
+	std::cout << "Float constructor called" << std::endl;
+}
+
+
 Fixed::Fixed(const Fixed& copy)
-	: fixedPointNum(copy.getRawBits()) {
+	: fixedPointNum(copy.fixedPointNum) {
 	std::cout << "Copy constructor called" << std::endl;
 }
 
-Fixed& Fixed::operator=(Fixed& copy)
+Fixed& Fixed::operator=(const Fixed& copy)
 {
 	std::cout << "Copy assigment operator called" << std::endl;
 	if (this == &copy)
-		return copy;
+		return *this;
 	else
-		this->fixedPointNum = getRawBits();
-	return *this;
-	
+		this->fixedPointNum = copy.fixedPointNum;
+	return *this;	
 }
 
-int Fixed::getRawBits() const{
-	std::cout << "getRawBits member function called" << std::endl;
-	return fixedPointNum;
+float Fixed::toFloat() const {
+	return static_cast<float>(fixedPointNum) / (1 << fracBits);
 }
 
-void Fixed::setRawBits(int const raw){
-	fixedPointNum = raw;
+int Fixed::toInt() const {
+	return fixedPointNum >> fracBits;
 }
+
 
 Fixed::~Fixed() {
 	std::cout << "Destructor called" << std::endl;
 }
 
+std::ostream& operator<<(std::ostream& out, const Fixed& value) {
+    out << value.toFloat();
+    return out;
+}
