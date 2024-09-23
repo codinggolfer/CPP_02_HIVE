@@ -1,8 +1,8 @@
-NAME	=	fixedPoint
+NAME	=	BSP
 
 CFLAGS	=	-Wall -Wextra -Werror 
 
-FILES	=	main.cpp Fixed.cpp
+FILES	=	main.cpp Fixed.cpp bsp.cpp Point.cpp
 
 CC		=	c++
 

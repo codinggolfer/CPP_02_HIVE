@@ -6,7 +6,7 @@
 /*   By: eagbomei <eagbomei@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 13:53:41 by eagbomei          #+#    #+#             */
-/*   Updated: 2024/09/20 15:22:54 by eagbomei         ###   ########.fr       */
+/*   Updated: 2024/09/23 14:22:08 by eagbomei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,36 @@
 
 int main()
 {
-	Point a(0.0f, 5.0f);
-	Point b(5.0f, 10.0f);
-	Point c(0.0f, 10.0f);
-	Point point;
+{
+	Point a(1.0f, 1.0f);
+	Point b(7.0f, 1.0f);
+	Point c(4.0f, 6.0f);
+	Point point(1.1f, 1.1f);
 
 	if (bsp(a, b, c, point))
-		std::cout << "point is in the triangle" << std::endl;
+		std::cout << "test 1: point is in the triangle" << std::endl;
 	else
-		std::cout << "point is not in the triangle" << std::endl;
-	return 0;
+		std::cout << "test 1: point is not in the triangle" << std::endl;
+}
+{
+	Point a(1.0f, 1.0f);
+	Point b(7.0f, 1.0f);
+	Point c(4.0f, 6.0f);
+	Point point(-3.0f, -3.0f);
+
+	if (bsp(a, b, c, point))
+		std::cout << "test 2: point is in the triangle" << std::endl;
+	else
+		std::cout << "test 2: point is not in the triangle" << std::endl;
+
+}
+	Point a(1.0f, 1.0f);
+	Point b(7.0f, 1.0f);
+	Point c(4.0f, 6.0f);
+	Point point(1.1f, 1.1f);
+
+	if (bsp(a, b, c, point))
+		std::cout << "test 3: point is in the triangle" << std::endl;
+	else
+		std::cout << "test 3: point is not in the triangle" << std::endl;
 }
