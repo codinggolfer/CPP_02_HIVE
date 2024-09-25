@@ -6,7 +6,7 @@
 /*   By: eagbomei <eagbomei@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/13 13:43:07 by eagbomei          #+#    #+#             */
-/*   Updated: 2024/09/18 11:08:19 by eagbomei         ###   ########.fr       */
+/*   Updated: 2024/09/25 16:23:59 by eagbomei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ Fixed::Fixed(const int num)
 }
 
 Fixed::Fixed(const float num)
-	: fixedPointNum(static_cast<int>(roundf(num * (1 << fracBits)))) {
+	: fixedPointNum((roundf(num * (1 << fracBits)))) {
 	std::cout << "Float constructor called" << std::endl;
 }
 

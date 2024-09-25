@@ -6,7 +6,7 @@
 /*   By: eagbomei <eagbomei@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 11:58:57 by eagbomei          #+#    #+#             */
-/*   Updated: 2024/09/20 12:44:20 by eagbomei         ###   ########.fr       */
+/*   Updated: 2024/09/25 16:46:42 by eagbomei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,8 @@ public:
 	Fixed operator++(int); //post-increment
 	Fixed operator--(int); //post-decrement
 	
-	friend std::ostream& operator<<(std::ostream& out, const Fixed& value);
 	
 	~Fixed(); 
 };
 
+std::ostream& operator<<(std::ostream& out, const Fixed& value);

@@ -6,7 +6,7 @@
 /*   By: eagbomei <eagbomei@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 13:54:31 by eagbomei          #+#    #+#             */
-/*   Updated: 2024/09/20 15:09:22 by eagbomei         ###   ########.fr       */
+/*   Updated: 2024/09/25 15:09:43 by eagbomei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,14 @@ Point& Point::operator=(const Point& copy)
 	if (this == &copy)
 		return *this;
 	return *this;	
+}
+
+float Point::getX() const {
+	return this->_attribute_x.toFloat();
+}
+
+float Point::getY() const {
+	return this->_attribute_y.toFloat();
 }
 
 Point::~Point() {}

@@ -6,7 +6,7 @@
 /*   By: eagbomei <eagbomei@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/13 13:43:21 by eagbomei          #+#    #+#             */
-/*   Updated: 2024/09/13 15:52:54 by eagbomei         ###   ########.fr       */
+/*   Updated: 2024/09/25 16:24:09 by eagbomei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,8 @@ public:
 	int getRawBits() const;
 	void setRawBits(int const raw);
 	
-	friend std::ostream& operator<<(std::ostream& out, const Fixed& value);
 
 	~Fixed();
 };
+
+std::ostream& operator<<(std::ostream& out, const Fixed& value);
