@@ -6,7 +6,7 @@
 /*   By: eagbomei <eagbomei@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 11:59:06 by eagbomei          #+#    #+#             */
-/*   Updated: 2024/09/25 16:51:28 by eagbomei         ###   ########.fr       */
+/*   Updated: 2024/09/26 11:16:32 by eagbomei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ Fixed::Fixed() : fixedPointNum(0) {
 }
 
 Fixed::Fixed(const int num)
-	: fixedPointNum(num >> fracBits) {
+	: fixedPointNum(num << fracBits) {
 	//std::cout << "Int constructor called" << std::endl;
 }
 
@@ -116,12 +116,12 @@ Fixed& Fixed::operator+(){
 }
 
 Fixed& Fixed::operator*(const Fixed& other){
-	this->fixedPointNum *= other.fixedPointNum;
+	this->fixedPointNum  = (this->fixedPointNum * other.fixedPointNum) >> fracBits;
 	return *this;	
 }
 
-Fixed& Fixed::operator/(int jako){
-	this->fixedPointNum /= jako;
+Fixed& Fixed::operator/(const Fixed& other){
+	this->fixedPointNum = (this->fixedPointNum << fracBits) / other.fixedPointNum;
 	return *this;
 }
 //#############################################################

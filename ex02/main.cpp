@@ -6,7 +6,7 @@
 /*   By: eagbomei <eagbomei@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 11:58:45 by eagbomei          #+#    #+#             */
-/*   Updated: 2024/09/25 16:48:51 by eagbomei         ###   ########.fr       */
+/*   Updated: 2024/09/26 11:26:21 by eagbomei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,12 @@ std::cout << a++ << std::endl;
 std::cout << a << std::endl;
 
 std::cout << b << std::endl;
-std::cout << b << std::endl;
+//std::cout << b << std::endl;
+//std::cout << a << std::endl;
 std::cout << Fixed::max( a, b ) << std::endl;
+//std::cout << Fixed::min( a, b ) << std::endl;
+//Fixed c = (Fixed(50) / Fixed(2.5f));
+//std::cout << c << std::endl;
 
 return 0;
 }

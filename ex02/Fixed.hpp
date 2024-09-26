@@ -6,7 +6,7 @@
 /*   By: eagbomei <eagbomei@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 11:58:57 by eagbomei          #+#    #+#             */
-/*   Updated: 2024/09/25 16:46:42 by eagbomei         ###   ########.fr       */
+/*   Updated: 2024/09/26 11:16:05 by eagbomei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ public:
 	Fixed& operator-();
 	Fixed& operator+();
 	Fixed& operator*(const Fixed& other);
-	Fixed& operator/(int jako);
+	Fixed& operator/(const Fixed& other);
 //Increment operator
 	Fixed& operator++();
 	Fixed& operator--();
